@@ -9,7 +9,6 @@ pub struct Load0UploadResponse {
     pub success: bool,
 }
 
-// todo: load_acc api key
 pub async fn upload_to_load0(data: Vec<u8>, content_type: &str) -> Result<String, Error> {
     let client = Client::new();
     let load_acc_key = std::env::var("LOAD_ACC")?;
