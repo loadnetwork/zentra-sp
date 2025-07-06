@@ -12,12 +12,14 @@ pub struct Load0UploadResponse {
 // todo: load_acc api key
 pub async fn upload_to_load0(data: Vec<u8>, content_type: &str) -> Result<String, Error> {
     let client = Client::new();
+    let load_acc_key = std::env::var("LOAD_ACC")?;
 
     let upload_url = format!("{}/upload", LOAD0_ENDPOINT_URL);
 
     let response = client
         .post(&upload_url)
         .header("Content-Type", content_type)
+        .header("X-Load-Authorization", load_acc_key)
         .body(data)
         .send()
         .await?;
