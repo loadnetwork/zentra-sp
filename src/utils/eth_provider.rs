@@ -18,9 +18,10 @@ pub async fn get_transaction_data(txid: &str) -> Result<alloy::primitives::Bytes
     Ok(res)
 }
 
-pub async fn get_zentra_tx_data(txid: &str) -> Result<Value, Error> {
+pub async fn get_zentra_tx_data(txid: &str) -> Result<(Value, Vec<u8>), Error> {
     let input = get_transaction_data(txid).await?;
     let hex_input = String::from_utf8(input.into())?;
-    let json_input = serde_json::from_str(&hex_input)?;
-    Ok(json_input)
+    let json_input: Value = serde_json::from_str(&hex_input)?;
+    let raw_input = hex_input.as_bytes().to_vec();
+    Ok((json_input, raw_input))
 }
