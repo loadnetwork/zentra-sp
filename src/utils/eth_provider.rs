@@ -1,5 +1,5 @@
 use alloy::providers::{ProviderBuilder, Provider};
-use alloy::primitives::{address, Bytes, TxHash};
+use alloy::primitives::TxHash;
 use anyhow::{anyhow, Error};
 use serde_json::Value;
 use std::str::FromStr;
