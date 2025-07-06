@@ -1,0 +1,7 @@
+[package]
+name = "zentra-sp"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+revm = "27.0.2"
