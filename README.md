@@ -1,3 +1,3 @@
 ```bash
-curl -X POST http://127.0.0.1:8000/process/0x469548e90a48718d2f4aacf8d4d7b4e6c66563b83fdd6bd193927321d7816355
+curl -X POST https://zentra-sp-ap9i.shuttle.app/process/0x469548e90a48718d2f4aacf8d4d7b4e6c66563b83fdd6bd193927321d7816355
 ```
